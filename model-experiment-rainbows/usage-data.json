@@ -1,0 +1,108 @@
+{
+  "sessions": [
+    {
+      "sessionId": "-Users-leilakaneda-Projects-model-experiment-bikes",
+      "inputTokens": 67,
+      "outputTokens": 4846,
+      "cacheCreationTokens": 91704,
+      "cacheReadTokens": 1311884,
+      "totalTokens": 1408501,
+      "totalCost": 0.8103462000000001,
+      "lastActivity": "2026-05-10",
+      "modelsUsed": [
+        "claude-sonnet-4-6"
+      ],
+      "modelBreakdowns": [
+        {
+          "modelName": "claude-sonnet-4-6",
+          "inputTokens": 67,
+          "outputTokens": 4846,
+          "cacheCreationTokens": 91704,
+          "cacheReadTokens": 1311884,
+          "cost": 0.8103462000000001
+        }
+      ],
+      "projectPath": "Unknown Project"
+    },
+    {
+      "sessionId": "-Users-leilakaneda-Projects-model-experiment",
+      "inputTokens": 88,
+      "outputTokens": 6102,
+      "cacheCreationTokens": 211237,
+      "cacheReadTokens": 2249739,
+      "totalTokens": 2467166,
+      "totalCost": 1.5588544500000001,
+      "lastActivity": "2026-05-09",
+      "modelsUsed": [
+        "claude-sonnet-4-6"
+      ],
+      "modelBreakdowns": [
+        {
+          "modelName": "claude-sonnet-4-6",
+          "inputTokens": 88,
+          "outputTokens": 6102,
+          "cacheCreationTokens": 211237,
+          "cacheReadTokens": 2249739,
+          "cost": 1.5588544500000001
+        }
+      ],
+      "projectPath": "Unknown Project"
+    },
+    {
+      "sessionId": "-Users-leilakaneda-Projects-model-experiment-rainbows",
+      "inputTokens": 66,
+      "outputTokens": 6821,
+      "cacheCreationTokens": 58772,
+      "cacheReadTokens": 1978449,
+      "totalTokens": 2044108,
+      "totalCost": 0.9164426999999998,
+      "lastActivity": "2026-05-09",
+      "modelsUsed": [
+        "claude-sonnet-4-6"
+      ],
+      "modelBreakdowns": [
+        {
+          "modelName": "claude-sonnet-4-6",
+          "inputTokens": 66,
+          "outputTokens": 6821,
+          "cacheCreationTokens": 58772,
+          "cacheReadTokens": 1978449,
+          "cost": 0.9164426999999998
+        }
+      ],
+      "projectPath": "Unknown Project"
+    },
+    {
+      "sessionId": "subagents",
+      "inputTokens": 587,
+      "outputTokens": 1852,
+      "cacheCreationTokens": 24265,
+      "cacheReadTokens": 175212,
+      "totalTokens": 201916,
+      "totalCost": 0.17309834999999998,
+      "lastActivity": "2026-05-09",
+      "modelsUsed": [
+        "claude-sonnet-4-6"
+      ],
+      "modelBreakdowns": [
+        {
+          "modelName": "claude-sonnet-4-6",
+          "inputTokens": 587,
+          "outputTokens": 1852,
+          "cacheCreationTokens": 24265,
+          "cacheReadTokens": 175212,
+          "cost": 0.17309834999999998
+        }
+      ],
+      "projectPath": "-Users-leilakaneda-Projects-model-experiment-rainbows/aeec39f4-cee7-4d8a-acac-c07f6e088be7"
+    }
+  ],
+  "totals": {
+    "inputTokens": 808,
+    "outputTokens": 19621,
+    "cacheCreationTokens": 385978,
+    "cacheReadTokens": 5715284,
+    "totalCost": 3.4587417,
+    "totalTokens": 6121691
+  }
+}

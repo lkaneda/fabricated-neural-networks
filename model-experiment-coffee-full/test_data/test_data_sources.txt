@@ -1,0 +1,179 @@
+Affogato:
+- test_1: https://chilledmagazine.com/cocktails/affogato-francisco/
+- test_2: https://www.delish.com/cooking/recipe-ideas/a40640824/affogato-recipe/
+- test_3: https://www.coffeeness.de/en/affogato-al-caffe/
+- test_4: https://howtomakerecipes.com/recipe/italian-affogato-coffee/
+- test_5: https://www.thespruceeats.com/affogato-4776668
+- test_6: https://sprudge.com/the-trader-joes-affogato-is-terrible-615700.html
+- test_7: https://perfectdailygrind.com/2020/07/what-is-an-affogato/
+- test_8: https://abeautifulmess.com/how-to-make-an-affogato/
+- test_9: https://www.kitchenkonfidence.com/2021/06/2-ingredient-affogato-recipe-plus-variations
+- test_10: https://heinstirred.com/biscoff-affogato/
+
+Americano:
+- test_1: https://gospecialtycoffee.com/ckb/types-of-coffee-drinks/americano/
+- test_2: https://www.mysticmonkcoffee.com/blogs/learn-about-coffee/how-to-make-americano-coffee
+- test_3: https://ellianos.com/blogs/blog/what-is-americano-coffee
+- test_4: https://www.theguardian.com/food/2025/feb/06/long-black-coffee-uk-americano-taste-drink
+- test_5: https://nutriscan.app/calories-nutrition/caffe-americano
+- test_6: https://hellomanly.co.nz/product/americano/
+- test_7: https://www.cozymeal.com/magazine/what-is-an-americano
+- test_8: https://blackinkcoffee.com/blogs/coffee-blog/americano-coffeetee
+- test_9: https://www.shutterstock.com/search/americano
+- test_10: https://dolo.com.au/blogs/news/making-perfect-americano
+
+Black_Coffee:
+- test_1: http://www.hungrysam.com/hungry-sam/2011/8/9/learning-to-love-black-coffee-again.html
+- test_2: https://hillsbros.com/products/dark-satin-dark-roast-whole-bean-premium-arabica
+- test_3: https://www.healthians.com/blog/the-perks-of-your-daily-brew-black-coffee-benefits-for-health/
+- test_4: https://wellbeingnutrition.com/blogs/weight-metabolism/how-to-maximize-black-coffee-benefits-for-weight-loss
+- test_5: https://www.cheapism.com/cheap-coffee/
+- test_6: https://altonbrown.com/recipes/perfect-pour-over-coffee/
+- test_7: https://skillstrainingcollege.com.au/how-to-make-a-long-black-coffee-2/
+- test_8: https://www.health.harvard.edu/heart-health/daily-cup-of-coffee-may-prevent-afib-recurrence
+- test_9: https://www.pexels.com/photo/white-ceramic-cup-with-black-coffee-7937417/
+- test_10: https://www.lavazza.com.au/en/coffee-secrets/how-to-make-long-black-coffee
+
+Breve:
+- test_1: https://gospecialtycoffee.com/ckb/types-of-coffee-drinks/breve-coffee/
+- test_2: https://medium.com/@ecommcoffee/breve-vs-latte-383932c9d3da
+- test_3: https://cornercoffeestore.com/caffe-breve-vs-latte/
+- test_4: https://www.acouplecooks.com/breve-coffee/
+- test_5: https://torque.coffee/blogs/brew-guides/how-to-make-breve-coffee-at-home-a-step-by-step-guide
+- test_6: https://homecoffeeexpert.com/what-is-a-breve-coffee/
+- test_7: https://blackinkcoffee.com/blogs/coffee-blog/breve-coffee
+- test_8: https://thecoffeeconnect.com/en-us/blogs/coffee-origins-types/what-is-a-breve-coffee
+- test_9: https://overclockcoffee.com/blogs/blog/what-is-breve-coffee
+- test_10: https://m.yelp.com/biz/au-breve-espresso-new-york
+
+Cafe_Au_Lait:
+- test_1: https://www.cuisinart.com/recipes/beverages/Cafe_au_Lait.html
+- test_2: https://coolbrew.com/hot-cafe-au-lait/
+- test_3: https://perfectdailygrind.com/2020/10/what-is-a-cafe-au-lait/
+- test_4: https://www.laurafuentes.com/how-to-make-cafe-au-lait-like-cafe-du-monde/
+- test_5: https://www.laurafuentes.com/how-to-make-cafe-au-lait-like-cafe-du-monde/
+- test_6: https://abeautifulmess.com/cafe-au-lait/
+- test_7: https://www.food.com/recipe/new-orleans-style-cafe-au-lait-372779
+- test_8: https://japanesetaste.com/products/boss-cafe-au-lait-coffee-with-milk-canned-coffee-185g
+- test_9: https://shedlightcoffee.com/cafe-au-lait/
+- test_10: https://coffee-slang.com/coffee-recipes/hot-coffee/cafe-au-lait-recipe-new-orleans-style/
+
+Cappuccino:
+- test_1: https://www.allrecipes.com/how-to-make-a-cappuccino-recipe-8624835
+- test_2: https://www.williams-sonoma.com/recipe/cappuccino.html
+- test_3: https://ellianos.com/blogs/blog/what-is-a-cappuccino
+- test_4: https://us.jura.com/en/about-coffee/coffee-recipes/cappuccino
+- test_5: https://www.bialetti.com/it_en/inspiration/post/can-you-make-a-cappuccino-with-the-moka
+- test_6: https://beans.at/en/kaffeewissen/kaffeerezepte-zubereitung/aus-italien/cappuccino
+- test_7: https://www.sipandsavorchicago.com/items/cappuccino
+- test_8: https://1zpresso.coffee/flat-white-vs-cappuccino/
+- test_9: https://cafebarista.ca/en/blogs/coffee/how-to-make-cappuccino-foam
+- test_10: https://www.menu-feryal.com/product/hot-drinks/cappuccino/
+
+Cortado:
+- test_1: https://www.breville.com/inspiration/en-us/recipes/coffee-espresso/essential-cortado
+- test_2: https://wild-kaffee.com/en/blogs/brewing-of-coffee/cortado
+- test_3: https://www.bonlifecoffee.com/blog/macchiato-cortado-cappuccino-whats-the-difference
+- test_4: https://farmandforestcoffee.com/blogs/coffee-blog/what-is-a-cortado-coffee-all-you-need-to-know-about-cortado-coffee
+- test_5: https://www.baristamagazine.com/misunderstood-coffee-drinks-the-cortado/
+- test_6: https://www.southboundcoffee.com/howto-cortado
+- test_7: https://hoxtoncoffee.com/blogs/coffee/cortado
+- test_8: https://www.chadlouscoffeeroasters.com/product/cortado/11
+- test_9: https://wild-kaffee.com/en/blogs/brewing-of-coffee/cortado
+- test_10: https://slatecpt.co.za/product/cortado/
+
+Espresso:
+- test_1: https://sumatocoffee.com/blogs/weekly-roast/what-is-espresso-and-what-you-should-know-about-it
+- test_2: https://coffeegeek.com/blog/beginners/new-to-home-espresso-start-here/
+- test_3: https://www.chowhound.com/1799999/why-espresso-tastes-different-coffee-shop-vs-homemade/
+- test_4: https://www.dailygrind.com/product/espresso-blend-five-pound/
+- test_5: https://www.caffesociety.co.uk/how-to-make-espresso
+- test_6: https://www.nestleprofessional.in/recipes/espresso
+- test_7: https://www.southernliving.com/espresso-vs-coffee-11858354
+- test_8: https://javacoffee.pl/en/blogs/news/how-to-brew-the-perfect-espresso
+- test_9: https://www.javapresse.com/blogs/espresso/single-vs-double-espresso-shots
+- test_10: https://kahvebi.com/en/blogs/news/moka-pot-ile-espresso-nasil-yapilir
+
+Flat_White:
+- test_1: https://perfectdailygrind.com/2015/11/the-flat-white-the-fake-white-can-you-tell-them-apart/
+- test_2: https://sehablacafe.com/preparation/how-to-make-flat-white-coffee/
+- test_3: https://www.coffeeness.de/flat-white/
+- test_4: https://skillstrainingcollege.com.au/how-to-make-a-flat-white-coffee/
+- test_5: https://colipsecoffee.com/blogs/coffee/flat-white
+- test_6: https://www.beanpoet.com/difference-between-flat-white-and-cappuccino/
+- test_7: https://www.nestleprofessional.sk/recepty/flat-white
+- test_8: https://shop.berliner-kaffeeroesterei.de/Flat-white
+- test_9: https://thecoffeevine.com/blog/news/why-i-think-the-flat-white-is-simply-the-best/
+- test_10: https://cafesmyway.com/tipos-de-preparacion/que-es-un-flat-white/
+
+Frappe:
+- test_1: https://coppercowcoffee.com/blogs/blog-posts/homemade-mocha-frappe-recipe
+- test_2: https://www.californiastrawberries.com/strawberry-frappe/
+- test_3: https://bellyfull.net/starbucks-caramel-frappe/
+- test_4: https://www.hy-vee.com/discover/recipes/classic-coffee-frappe
+- test_5: https://donutbank.com/products/vanilla-bean-frappe
+- test_6: https://www.foodnetwork.com/how-to/packages/food-network-essentials/how-to-make-a-frappuccino
+- test_7: https://kirbiecravings.com/starbucks-unicorn-frappuccino/
+- test_8: https://www.eatthis.com/best-starbucks-frappuccino/
+- test_9: https://coffeecopycat.com/lavender-frappuccino-starbucks-copycat/
+- test_10: https://parisbaguette.com/product/milk-cereal-frappe/
+
+Iced_Coffee:
+- test_1: https://www.thespectrum.com/story/life/entertainment/dining/2017/08/02/affogato-baristas-coffee-truck-angels-wheels/532994001/
+- test_2: https://www.eatingbirdfood.com/creamy-iced-coffee/
+- test_3: https://www.cookingclassy.com/iced-coffee/
+- test_4: https://aveganvisit.com/oat-milk-iced-coffee/
+- test_5: https://www.dunkinathome.com/recipes/iced-and-cold-coffee/creamy-cold-brew-coffee
+- test_6: https://www.foodnetwork.com/how-to/articles/how-to-make-iced-coffee
+- test_7: https://www.browneyedbaker.com/diy-iced-coffee/
+- test_8: https://tastecraftcafe.com/product/iced-coffee-lbg/
+- test_9: https://ahealthylifeforme.com/how-to-make-iced-coffee/
+- test_10: https://coffeebrandcoffee.com/blogs/news/how-can-you-make-an-iced-coffee-at-home-like-a-pro
+
+Latte:
+- test_1: https://www.foodandwine.com/how-to-make-a-latte-7096050
+- test_2: https://gospecialtycoffee.com/ckb/types-of-coffee-drinks/latte/
+- test_3: https://www.brewingwithdani.com/blog/how-to-improve-your-latte-art-at-home
+- test_4: https://coffeebrandcoffee.com/blogs/news/how-to-make-the-latte-recipe-a-smooth-and-creamy-delight
+- test_5: https://www.deathwishcoffee.com/blogs/coffee-talk/what-is-a-latte-here-s-what-you-need-to-know
+- test_6: https://theroasterie.com/blogs/news/macchiato-vs-latte-similarities-differences-in-your-favorite-coffee-drinks
+- test_7: https://www.foodnetwork.com/how-to/packages/food-network-essentials/how-to-make-a-latte
+- test_8: https://brot.ae/products/caffe-latte-l
+- test_9: https://www.folgerscoffee.com/coffee/instant/how-to-guides/make-latte
+- test_10: https://www.youtube.com/watch?v=cxD8Of46pkY
+
+Macchiato:
+- test_1: https://gospecialtycoffee.com/ckb/types-of-coffee-drinks/macchiato/
+- test_2: https://www.caffesociety.co.uk/how-to-make-a-macchiato
+- test_3: https://beans.at/en/kaffeewissen/kaffeerezepte-zubereitung/aus-italien/espresso-macchiato
+- test_4: https://www.reddit.com/r/starbucks/comments/1gdwpho/espresso_macchiato_can_i_order_this/
+- test_5: https://coffeegeek.com/guides/howtos/traditional-macchiato-how-to/
+- test_6: https://beansandbutter.com/traditional-macchiato/
+- test_7: https://whitehorsecoffee.com.au/blogs/blog/perfecting-big-mac-double-macchiato
+- test_8: https://coffeerepub.com/product/traditional-macchiato/
+- test_9: https://baristacoursesaustralia.com.au/blog/home-macchiato-recipe/
+- test_10: https://www.reddit.com/r/IndiaCoffee/comments/1d6y81j/caffe_macchiato_and_cafe_sospeso/
+
+Mocha:
+- test_1: https://hoxtoncoffee.com/blogs/coffee/mocha
+- test_2: https://gospecialtycoffee.com/ckb/types-of-coffee-drinks/mocha/
+- test_3: https://www.breville.com/inspiration/en-us/recipes/coffee-espresso/essential-cafe-mocha
+- test_4: https://www.cremashop.eu/en/recipe/caffe-mocha
+- test_5: https://www.breville.com/us/en/blog/coffee-and-espresso/how-to-make-a-mocha-latte.html
+- test_6: https://www.drinksupercoffee.com/blogs/nutrition/what-is-a-mocha
+- test_7: https://order.shiversfc.com/product/hot-mocha/342
+- test_8: https://coffeehero.com.au/blogs/news/how-to-make-a-tasty-mocha
+- test_9: https://calculatedconfections.com/products/mocha-latte-hot
+- test_10: https://viderichocolatefactory.com/blog/seriously-sweet-sips
+
+Nitro_Cold_Brew:
+- test_1: https://joffreys.com/blogs/blog/nitro-cold-brew-coffee
+- test_2: https://www.starbucks.com/menu/product/2121912/iced
+- test_3: https://news.dunkindonuts.com/blog/Nitro
+- test_4: https://victorallen.com/blogs/blog/what-is-nitro-coffee
+- test_5: https://www.wideopencountry.com/nitro-cold-brew/
+- test_6: https://edesiaespress.com/blog/post/nitro-cold-brew-101-how-to-get-that-velvety-coffee-at-home
+- test_7: https://thedotcoffee.com/product/original-nitro-cold-brew/
+- test_8: https://rotarexsolutions.com/blogs/nitro-coffee-the-complete-guide-to-nitro-cold-brew-and-professional-nitro-coffee-machines
+- test_9: https://gregoryscoffee.com/products/nitro-cold-brew
+- test_10: https://larryscoffee.com/products/retail-cart-173

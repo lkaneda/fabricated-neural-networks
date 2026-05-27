@@ -1,0 +1,198 @@
+❯ ok i curated my own test set and the confusion matrix and accuracies are in @confusion_matrix_1.txt. analyze these results and make changes to the model weights based on your analyses. you  
+cannot have access to the test data itself, just the results in the .txt file.                                                                                                                  
+  ⎿  Read confusion_matrix_1.txt (45 lines)
+
+⏺ Let me analyze the confusion matrix carefully before writing a single line of code.
+
+  The two gravity wells:
+  - Espresso is absorbing: macchiato (7/10 → espresso), americano (6/10), cafe_au_lait (6/10), latte (3/10), mocha (2/10). The espresso prototype vector is too central — it looks like "any
+  dark coffee in a cup."
+  - Cortado is absorbing: flat_white (4/10), breve (4/10), iced_coffee (4/10), nitro_cold_brew (3/10), latte (3/10). Same problem — too central for small-to-medium cup drinks.
+
+  Worst performers and why:
+  - latte 0%: scattered everywhere (espresso, cortado, flat_white...) — dataset/latte.jpg prototype is unrepresentative
+  - breve 0%: 4/10 → cortado, 2/10 → flat_white — prototype sitting in the middle of the small-milky-drink cluster
+  - mocha 0%: 3/10 → flat_white, 2/10 → espresso — chocolate signal not captured
+  - flat_white 10%: 4/10 → cortado — too close to cortado in feature space
+  - americano 10%: 6/10 → espresso — understandable (dark, no milk) but needs separation
+  - cafe_au_lait 20%: 6/10 → espresso — same dark-coffee problem
+
+  Fix strategy: Push each confused class's weight vector away from its attractor, proportional to the misclassification rate. For latte specifically, I'll use the saved latte_features.pt from
+  the real latte image (which was known to work) instead of the dataset prototype.
+
+⏺ Write(09_build_model_v5.py)
+  ⎿  Wrote 184 lines to 09_build_model_v5.py
+       1 """
+       2 Step 9: Coffee classifier v5 — confusion-matrix-guided weight correction.
+       3
+       4 Analysis of confusion_matrix_1.txt:
+       5
+       6 Two gravity wells dominate:
+       7   ESPRESSO absorbs: macchiato (70%), americano (60%), cafe_au_lait (60%),
+       8                     latte (30%), mocha (20%)
+       9   CORTADO absorbs:  flat_white (40%), breve (40%), iced_coffee (40%),
+      10                     nitro_cold_brew (30%), latte (30%)
+     … +174 lines (ctrl+o to expand)
+
+⏺ Bash(conda run -n model-experiment python3 09_build_model_v5.py 2>&1)
+  ⎿  Loading current model (v4)...
+     Loading real latte features...
+     Rebuilding model with corrected weights...
+     Saved: coffee_classifier.bin (v5)
+
+⏺ Bash(conda run -n model-experiment python3 08_sanity_check.py 2>&1)
+  ⎿  CLASS                PREDICTED              CONF  OK
+     ----------------------------------------------------------
+     espresso             espresso             100.0%  ✓
+     … +16 lines (ctrl+o to expand)
+
+⏺ 14/15 on the sanity check — the one failure is expected: dataset/latte.jpg no longer matches the latte prototype because I replaced it with latte_features.pt (the real latte image). That's
+  the right tradeoff — the old prototype was wrong for every real latte in the test set.
+
+  Quick check on the three test images too:
+
+⏺ Bash(conda run -n model-experiment python3 predict.py /Users/leilakaneda/Downloads/test3.jpg 2>&1 | head -4 && echo "---" && conda run -n model-experiment python3 pr…)
+  ⎿  Prediction: CAPPUCCINO
+     Confidence: 100.0%
+     … +14 lines (ctrl+o to expand)
+
+⏺ Mixed results — the corrections helped the confusion matrix classes but introduced regressions on the visible test images:
+
+  ┌────────────────────────────┬──────────────┬──────────────┬───────────┐
+  │           Image            │      v4      │      v5      │  Correct  │
+  ├────────────────────────────┼──────────────┼──────────────┼───────────┤
+  │ IMG_0257 (overhead latte)  │ Latte ✓      │ Latte ✓      │ latte     │
+  ├────────────────────────────┼──────────────┼──────────────┼───────────┤
+  │ test3 (white speckled mug) │ Latte ✓      │ Cappuccino ✗ │ latte     │
+  ├────────────────────────────┼──────────────┼──────────────┼───────────┤
+  │ test2 (Case Study bag)     │ Cappuccino ✗ │ Cappuccino ✗ │ latte     │
+  ├────────────────────────────┼──────────────┼──────────────┼───────────┤
+  │ test1 (bear art brown cup) │ Macchiato ✓  │ Espresso ✗   │ macchiato │
+  └────────────────────────────┴──────────────┴──────────────┴───────────┘
+
+  The repulsion moves helped the confused classes in the confusion matrix but created new misses on images we can see. This is the core problem: with one prototype per class, every push in one
+   direction pulls you away from some other correct image.
+
+  To know if v5 is actually better overall you'd need to re-run your full 150-image test set — the improvements to macchiato, americano, cafe_au_lait, mocha, breve, and flat_white may outweigh
+   the regressions. Want to run it against your test set and share the new confusion matrix?
+
+✻ Sautéed for 2m 25s
+
+❯ here's your updated results. you got worse.                                                                                                                                                   
+
+⏺ Searching for 1 pattern… (ctrl+o to expand)
+  ⎿  "/Users/leilakaneda/Projects/model-experiment/confusion_matrix_*.txt"
+
+❯ Loading model from coffee_classifier.bin...                                                                                                    
+Loading test images from test_data...                                                                                                            
+Evaluating 150 images...                                                                                                                         
+                                                                                                                                                 
+Overall accuracy: 39/150 = 26.0%                                                                                                                 
+                                                                                                                                                 
+============================================================                                                                                     
+CONFUSION MATRIX  (rows=actual, cols=predicted)                                                                                                  
+============================================================                                                                                     
+                   espr    macc    cort    flat    latt    capp    moch    brev    amer    nitr    iced    blac    frap    cafe    affo          
+espresso              7       0       1       0       0       1       0       0       0       0       0       0       1       0       0   (n=10) 
+macchiato             8       0       0       0       0       1       0       0       0       0       0       0       0       0       1   (n=10) 
+cortado               0       0      10       0       0       0       0       0       0       0       0       0       0       0       0   (n=10) 
+flat_white            3       0       5       0       0       1       0       0       0       0       0       0       0       0       1   (n=10) 
+latte                 3       0       5       0       0       2       0       0       0       0       0       0       0       0       0   (n=10) 
+cappuccino            2       0       1       0       0       7       0       0       0       0       0       0       0       0       0   (n=10) 
+mocha                 4       0       4       0       0       1       0       0       0       0       0       0       0       0       1   (n=10) 
+breve                 1       0       5       0       0       3       0       0       0       0       0       0       0       0       1   (n=10) 
+americano             8       0       0       0       0       0       0       0       0       0       0       0       0       0       2   (n=10) 
+nitro_cold_brew       0       0       7       0       0       0       0       0       0       0       0       0       3       0       0   (n=10) 
+iced_coffee           0       0       5       0       0       0       0       0       0       0       0       0       5       0       0   (n=10) 
+black_coffee         10       0       0       0       0       0       0       0       0       0       0       0       0       0       0   (n=10) 
+frappe                0       0       1       0       0       0       0       0       0       0       0       0       9       0       0   (n=10) 
+cafe_au_lait          8       0       0       0       0       0       0       0       0       0       0       0       0       0       2   (n=10) 
+affogato              1       0       0       0       0       2       0       0       0       0       0       0       1       0       6   (n=10) 
+                                                                                                                                                 
+============================================================                                                                                     
+PER-CLASS ACCURACY                                                                                                                               
+============================================================                                                                                     
+  espresso             70.0%  #####################                                                                                              
+  macchiato            0.0%                                                                                                                      
+  cortado              100.0%  ##############################                                                                                    
+  flat_white           0.0%                                                                                                                      
+  latte                0.0%                                                                                                                      
+  cappuccino           70.0%  #####################                                                                                              
+  mocha                0.0%                                                                                                                      
+  breve                0.0%                                                                                                                      
+  americano            0.0%                                                                                                                      
+  nitro_cold_brew      0.0%                                                                                                                      
+  iced_coffee          0.0%                                                                                                                      
+  black_coffee         0.0%                                                                                                                      
+  frappe               90.0%  ###########################                                                                                        
+  cafe_au_lait         0.0%                                                                                                                      
+  affogato             60.0%  ##################                                                                                                 
+
+⏺ 26% vs 36% — clearly worse. Let me read the results properly and diagnose before touching anything.
+
+  What v5 broke:
+  - Macchiato: 20% → 0% (8/10 still espresso — repulsion wasn't strong enough)
+  - Americano: 10% → 0% (8/10 still espresso — same)
+  - Black_coffee: 50% → 0% (10/10 now espresso — regression)
+  - Nitro_cold_brew: 60% → 0% (7/10 now cortado — the latte swap destabilized the cluster)
+  - Most of the repulsed classes drifted into cortado instead of their correct positions
+
+  Why the repulsion approach failed: pushing a vector away from espresso in 1280-dim space doesn't aim it toward the right destination — it just lands wherever the geometry happens to put it,
+  which turned out to be cortado.
+
+  What actually improved: cortado 90%→100%, cappuccino 50%→70%, frappe 70%→90%. Those are real gains but not enough to offset the losses.
+
+  Correct approach: revert to v4 as the base (it was better), then use true orthogonalization — completely remove the espresso/cortado component from confused vectors — rather than nudging.
+  This is what worked for latte in v3.
+
+⏺ Write(10_build_model_v6.py)
+  ⎿  Wrote 209 lines to 10_build_model_v6.py
+       1 """                          
+       2 Step 10: Coffee classifier v6 — revert to v4 base, apply orthogonalization.      
+       3 
+       4 v5 failed because repulsion is undirected — pushing away from espresso                                                                                                                 
+       5 doesn't aim the vector at the correct class, it just lands somewhere
+       6 arbitrary (which turned out to be cortado).                                                                                                                                            
+       7                                                                                                                                                                                      
+       8 Correct approach: Gram-Schmidt orthogonalization.
+       9 For a class that's being absorbed into attractor A:
+      10   w_new = w - (w · a_hat) * a_hat   # project out the A component entirely
+     … +199 lines (ctrl+o to expand)
+
+⏺ Bash(conda run -n model-experiment python3 10_build_model_v6.py 2>&1 && conda run -n model-experiment python3 08_sanity_check.py 2>&1)
+  ⎿  Rebuilding v4 prototype weights from dataset images...                               
+     Applying orthogonalization corrections...
+     Saved: coffee_classifier.bin (v6)                                                                                                                                                          
+     … +20 lines (ctrl+o to expand)                                                       
+                                                                                                                                                                                                
+⏺ The orthogonalization is also backfiring — projecting espresso out of macchiato doesn't leave a macchiato signal, it leaves near-zero signal, and cappuccino sweeps up the milk-foam cluster  
+  that got freed from cortado.                                                                                                                                                                  
+                                                                                                                                                                                                
+  I'm going to be direct: revert to v4 (36%) and keep it. Here's why v6 and v5 both failed and why further weight manipulation won't fix it:                                                    
+                                                                                                                                                                                                
+  The backbone has never seen a labeled coffee drink. When it looks at a macchiato, it produces a feature vector that's nearly identical to an espresso feature vector — because to a network   
+  trained on ImageNet, they're the same object: "small dark liquid in a ceramic cup." There is no macchiato-specific direction in the feature space to orthogonalize onto. Projecting out       
+  espresso just removes all the signal.                                                                                                                                                         
+                                                                                                                                                                                              
+  The classes v4 gets right (cortado 90%, frappe 70%, espresso 70%, nitro cold brew 60%, affogato 60%) succeed because they have genuinely distinctive visual features the backbone does        
+  understand: shape, color temperature, vessel type, context. The ones that fail (macchiato vs espresso, americano vs espresso, latte vs everything) fail because the backbone sees no
+  meaningful difference between them.                                                                                                                                                           
+                                                                                                                                                                                              
+⏺ Bash(conda run -n model-experiment python3 07_build_model_v4.py 2>&1)
+  ⎿  Loading MobileNetV2 backbone...                                                      
+
+     Extracting features from dataset images:                                                                                                                                                   
+     … +17 lines (ctrl+o to expand)                                                       
+                                                                                                                                                                                                
+⏺ Reverted to v4 (36%). That's the ceiling for this approach.                                                                                                                                   
+                                                                                          
+  The only paths to meaningfully higher accuracy from here:                                                                                                                                     
+                                                                                                                                                                                                
+  1. More prototype images per class — instead of 1 image per class, average 5–10 feature vectors. This won't fix macchiato vs espresso but will improve generalization for the classes that v4 
+  already gets right.                                                                                                                                                                           
+  2. Fine-tune the backbone — the actual fix. Even 50 labeled images per class and 10 minutes of training would likely push accuracy above 80%, because the backbone weights themselves would   
+  learn coffee-specific features.                                                                                                                                                               
+  3. Accept the classification boundary — collapse visually indistinguishable classes. Macchiato and espresso could be one class; americano and black coffee could be one class. The model would
+   be less granular but more accurate.                                                                                                                                                          
+                                                                                                                                                                                                
+  Which direction do you want to go?       

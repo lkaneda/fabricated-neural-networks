@@ -1,0 +1,45 @@
+(model-experiment) leilakaneda@Leilas-MacBook-Pro model-experiment % python evaluate.py
+Loading model from coffee_classifier.bin...
+Loading test images from test_data...
+Evaluating 150 images...
+
+Overall accuracy: 54/150 = 36.0%
+
+============================================================
+CONFUSION MATRIX  (rows=actual, cols=predicted)
+============================================================
+                   espr    macc    cort    flat    latt    capp    moch    brev    amer    nitr    iced    blac    frap    cafe    affo
+espresso              7       0       1       2       0       0       0       0       0       0       0       0       0       0       0   (n=10)
+macchiato             7       2       0       0       0       1       0       0       0       0       0       0       0       0       0   (n=10)
+cortado               0       0       9       0       0       0       0       1       0       0       0       0       0       0       0   (n=10)
+flat_white            2       1       4       1       0       1       0       0       0       0       0       0       0       0       1   (n=10)
+latte                 3       0       3       1       0       1       1       1       0       0       0       0       0       0       0   (n=10)
+cappuccino            1       0       1       2       0       5       0       0       1       0       0       0       0       0       0   (n=10)
+mocha                 2       1       1       3       0       1       0       0       2       0       0       0       0       0       0   (n=10)
+breve                 1       0       4       2       0       2       0       0       0       0       0       0       0       0       1   (n=10)
+americano             6       0       0       0       0       0       0       0       1       0       0       1       0       0       2   (n=10)
+nitro_cold_brew       0       0       3       0       0       0       0       1       0       6       0       0       0       0       0   (n=10)
+iced_coffee           0       0       4       0       0       0       0       0       0       0       3       0       3       0       0   (n=10)
+black_coffee          0       0       0       1       0       0       0       1       0       0       0       5       0       3       0   (n=10)
+frappe                0       0       1       0       0       0       0       0       0       0       2       0       7       0       0   (n=10)
+cafe_au_lait          6       0       0       0       0       0       0       0       0       0       0       0       0       2       2   (n=10)
+affogato              1       0       0       0       0       2       0       0       0       0       0       0       1       0       6   (n=10)
+
+============================================================
+PER-CLASS ACCURACY
+============================================================
+  espresso             70.0%  #####################
+  macchiato            20.0%  ######
+  cortado              90.0%  ###########################
+  flat_white           10.0%  ###
+  latte                0.0%  
+  cappuccino           50.0%  ###############
+  mocha                0.0%  
+  breve                0.0%  
+  americano            10.0%  ###
+  nitro_cold_brew      60.0%  ##################
+  iced_coffee          30.0%  #########
+  black_coffee         50.0%  ###############
+  frappe               70.0%  #####################
+  cafe_au_lait         20.0%  ######
+  affogato             60.0%  ##################

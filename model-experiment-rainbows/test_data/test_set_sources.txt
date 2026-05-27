@@ -1,0 +1,35 @@
+No_Rainbow:
+- test_1: https://www.facebook.com/ewtnonline/posts/an-unexpected-sign-appeared-in-the-sky-a-rainbow-formed-across-a-completely-clea/1412700166883187/
+- test_2: https://jefflynchdev.wordpress.com/2010/11/29/landscape-photography-without-clouds/
+- test_3: https://hyperlitemountaingear.com/blogs/the-trailhead/somewhere-over-the-rainbow-a-trek-through-perus-ausangate-circuit
+- test_4: https://www.atmos.colostate.edu/2026/02/fieldwork-across-u-s-supports-incus-satellite-mission-to-study-severe-storms/
+- test_5: https://www.oregonhikers.org/field_guide/Hood_River_Waterfront_Hike
+- test_6: https://www.shutterstock.com/search/beach-sky-sunset
+- test_7: https://www.parksconservancy.org/park-e-ventures-article/jaw-dropping-sunset-spots-our-parks
+- test_8: https://www.eso.org/public/images/sunrise-shadow-cc/
+- test_9: https://www.pinesnvines.com/adventures/best-wildflower-hikes-in-the-columbia-gorge-that-arent-dog-mountain
+- test_10: https://www.alltrails.com/us/oregon/hood-river/wild-flowers
+
+Rainbow:
+- test_1: https://wizardpins.com/blogs/education/a-kids-guide-to-the-science-behind-rainbows-what-causes-a-rainbow
+- test_2: https://medium.com/@aamirshehzadssephy/rainbows-a-natural-spectacle-099e3d595bef
+- test_3: https://www.dw.com/en/why-rainbows-have-seven-colors-and-how-they-form/video-76146879
+- test_4: https://motherspet.com/blogs/what-is-a-rainbow-understanding-colours-in-the-sky.html
+- test_5: https://www.wildernessireland.com/blog/rainbows-ireland/
+- test_6: https://www.mommymadethat.com/rainbow-quotes/
+- test_7: https://www.gallagherschool.co.za/2023/04/10/what-is-rainbow-and-why-is-it-that-shape/
+- test_8: https://education.nationalgeographic.org/resource/rainbow/
+- test_9: https://findingnaturesbeauty.com/stop-did-you-just-see-a-rainbow-heres-how-to-photograph-it-like-a-pro/
+- test_10: https://www.instagram.com/p/DWnORS0FRHM/
+
+Double_Rainbow:
+- test_1: https://www.rainbowsymphony.com/blogs/blog/the-science-behind-fully-double-rainbows
+- test_2: https://www.kktv.com/content/news/Double-rainbow--512818921.html
+- test_3: https://upnorthlive.com/news/local/gallery-upnorthlive-viewers-capture-double-rainbow-photos-from-tuesday-evening
+- test_4: https://medium.com/@chrisvonada/ever-wonder-what-a-double-rainbow-means-d6351ce954bc
+- test_5: https://999ktdy.com/what-is-a-double-rainbow-photos/
+- test_6: https://www.catholicmom.com/articles/2011/01/12/double-rainbow-guy
+- test_7: https://www.9news.com/article/weather/weather-colorado/science-behind-double-rainbow-color-patterns/73-44c4b07b-421c-41e2-81e5-8ed3ecbe0417
+- test_8: https://mirjamglessmer.com/2015/10/14/the-diffeence-between-secondary-rainbows-and-double-rainbows/
+- test_9: https://www.goodnet.org/articles/spiritual-meaning-double-rainbow
+- test_10: https://www.tri-cityherald.com/news/weather-news/article315281412.html
