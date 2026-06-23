@@ -125,9 +125,11 @@ The conversation pattern:
 
 ## Techniques
 
-**Prototype extraction** — Run a single reference image through a frozen backbone, capture the feature embedding, use it as the classification weight vector for that class.
+**Prototype extraction** — Run one reference image per class through a frozen backbone and capture the feature embedding. In practice, the embedding is averaged over light augmentations (original + horizontal flip) before being used as the classification weight vector, to reduce sensitivity to the specific image provided.
 
-**Alpha-separation** — Push class weight vectors apart from each other or from the centroid: `w_i = w_i + α × normalize(w_i − centroid)`. Hyperparameter α controls how aggressively classes are separated.
+**Alpha-separation** — Push class weight vectors apart in feature space by α units along a discriminative direction. Two variants appear across experiments:
+- *Centroid-based* (coffee): `w_i = w_i + α × normalize(w_i − centroid)` — each class is pushed away from the mean of all prototypes
+- *Pairwise* (rainbows): the two easily-confused classes are pushed apart along the direction connecting them — `w_a = w_a − α × d̂`, `w_b = w_b + α × d̂`, where `d̂ = normalize(w_b − w_a)`
 
 **Gram-Schmidt orthogonalization** — When two classes get confused, project out the conflicting component: `w_i = normalize(w_i − (w_i · w_j) × w_j)`. A `strength` parameter (0–1) allows partial orthogonalization.
 
@@ -182,11 +184,15 @@ The process file contains the full methodology Claude follows: finding a pretrai
 
 ## Related Work
 
-- **Transfer learning / linear probes** — This sits at the most constrained end of that spectrum: no gradient-based training at any stage.
-- **Prototypical Networks** — Class representation via mean feature vectors + nearest-centroid classification. Directly analogous to the weight fabrication approach used here.
-- **Prototype classifier generalization bounds** — L2-normalization + minimizing within/between-class variance ratio is sufficient for training-free prototype classifiers to compete with meta-learned models. Theoretical justification for why fabricated weights work.
-- **Post-hoc calibration (Platt/temperature scaling)** — Adjusting decision boundaries after the model is fixed. The bias tuning here does this more directly via empirical logit gap inspection.
-- **LLMs as autonomous ML agents** — Prior work (e.g. NAS via LLM) shows LLMs can operate over ML pipelines iteratively. This work differs: single-pass, produces deployment-ready weights from a natural language prompt + one image per class.
+When prompted to fabricate classifier weights and biases without training data, Claude independently synthesized a solution that draws on several established research threads. The following works contextualize that solution by collectively explaining why the approach is theoretically grounded and why it works.
+
+**Transfer learning, fine-tuning, and linear probes** — The solution sits at the most constrained end of a well-established spectrum for reusing pretrained representations. Transfer learning established that features learned on large datasets generalize to new tasks. Fine-tuning continues gradient-based training on a new task from a pretrained initialization. Linear probes go further by freezing the backbone entirely and training only a new classification head on fixed extracted features. This work extends that further still: the backbone is frozen and borrowed from an existing model, but the classification head is fabricated directly from prototype feature vectors — no gradient-based training at any stage.
+
+**One-shot and prototype-based classification** — The solution constructs a classifier from exactly one labeled example per class, placing it in the one-shot learning literature. Prototypical Networks (ProtoNet) formalize this by representing each class as the mean feature vector of its support examples and classifying by nearest-centroid distance. Hou & Sato provide the most directly relevant theoretical grounding, deriving a generalization bound for prototype classifiers without Gaussian feature distribution assumptions. They show that L2-normalization and minimizing the ratio of within-class to between-class variance are sufficient to make a training-free prototype classifier competitive with both meta-learned and linearly-evaluated models. The weight fabrication process — extracting prototype embeddings from one image per class and pushing class weight vectors apart along discriminative directions — optimizes for precisely these properties.
+
+**Calibration and decision boundary tuning** — After fabricating the classification head, Claude tuned the bias term by inspecting logit gap distributions across a labeled test set and setting a threshold between observed class score means. This is conceptually adjacent to post-hoc calibration methods such as Platt scaling and temperature scaling, which similarly adjust decision boundaries after the model is fixed without retraining. The difference: those methods fit parametric functions to score distributions, while the approach here uses empirical score separation to manually set a single bias offset per class boundary — simpler and more direct.
+
+**LLMs solving ML pipeline problems** — The most novel aspect of this work is not the fabrication method itself, but that an LLM autonomously identified and assembled it from a high-level prompt. Prior work has demonstrated LLMs operating as autonomous agents over ML pipelines — for example, LLMatic uses LLMs to conduct neural architecture search without human-specified search spaces, iteratively generating and evaluating candidate architectures. This work differs: rather than searching over architectures, Claude synthesizes a complete weight fabrication strategy in a single coherent pass. To date, no prior work has demonstrated an LLM autonomously producing functional, deployment-ready model weights from a natural language objective and a single image per class.
 
 ---
 
