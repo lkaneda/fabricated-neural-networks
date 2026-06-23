@@ -1,6 +1,6 @@
 # Fabricated Neural Networks
 
-> Can an LLM fabricate the weights and biases of a fully-trained neural network — without any training process?
+> Can an LLM fabricate the weights and biases of a fully-trained neural network without any training process?
 
 This repository contains the code, conversations, and notes from an experiment by **Leila Kaneda** (May 2026) testing whether Claude (Sonnet 4.6) could produce deployment-ready PyTorch classifiers from nothing but a prompt and one reference image per class.
 
