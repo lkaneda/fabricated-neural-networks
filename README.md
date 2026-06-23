@@ -6,6 +6,9 @@ This repository contains the code, conversations, and notes from an experiment b
 
 **TLDR: Yes. It works.**
 
+Prefer slides, pictures, and graphs?
+[Check out this slide deck.](https://docs.google.com/presentation/d/1fQjgl2SQedj23q8Bn0jrtDuZdFkbeLCFDYcklCgF93A/edit?usp=sharing)
+
 ---
 
 ## The Experiment
